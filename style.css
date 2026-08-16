@@ -1,0 +1,1056 @@
+/* ================================
+   GOVERNMENT HIGH SCHOOL GANOL
+   MAIN WEBSITE STYLESHEET
+================================ */
+
+/* ---------- BASIC RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f5f7fa;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ---------- COMMON CONTAINER ---------- */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* ---------- TOP BAR ---------- */
+
+.top-bar {
+    background: #123b6d;
+    color: white;
+    font-size: 14px;
+}
+
+.top-content {
+    min-height: 42px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.top-content span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* ---------- HEADER ---------- */
+
+.header {
+    background: white;
+    padding: 25px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.school-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.school-brand img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+}
+
+.school-brand h1 {
+    font-size: 30px;
+    color: #123b6d;
+    margin-bottom: 4px;
+}
+
+.school-brand p {
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* ---------- NAVIGATION ---------- */
+
+.navbar {
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-menu li {
+    list-style: none;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 15px 18px;
+    color: #333;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    background: #123b6d;
+    color: white;
+}
+
+
+/* ---------- HERO SECTION ---------- */
+
+.hero {
+    min-height: 500px;
+    background: linear-gradient(
+        rgba(18, 59, 109, 0.75),
+        rgba(18, 59, 109, 0.75)
+    ),
+    url("Images/school.jpg") center/cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 40px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: #f5b400;
+    color: #111;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ffffff;
+}
+
+
+/* ---------- GENERAL SECTIONS ---------- */
+
+section {
+    padding: 70px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    color: #123b6d;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #666;
+}
+
+
+/* ---------- ABOUT ---------- */
+
+.about {
+    background: white;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.about-text h3 {
+    color: #123b6d;
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+
+/* ---------- FEATURES / CARDS ---------- */
+
+.features {
+    background: #f5f7fa;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.card i {
+    font-size: 35px;
+    color: #123b6d;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #123b6d;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #666;
+}
+
+
+/* ---------- MESSAGE SECTION ---------- */
+
+.message {
+    background: white;
+}
+
+.message-content {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.message-content img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+}
+
+.message-content blockquote {
+    font-size: 18px;
+    font-style: italic;
+    color: #555;
+    margin: 20px 0;
+}
+
+.message-content h3 {
+    color: #123b6d;
+}
+
+
+/* ---------- TEACHERS ---------- */
+
+.teachers {
+    background: #f5f7fa;
+}
+
+.teacher-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.teacher-card {
+    background: white;
+    text-align: center;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.teacher-card img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+}
+
+.teacher-card h3 {
+    color: #123b6d;
+}
+
+
+/* ---------- ACHIEVEMENTS ---------- */
+
+.achievements {
+    background: white;
+}
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.achievement-card {
+    background: #f5f7fa;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.achievement-card i {
+    font-size: 35px;
+    color: #f5b400;
+    margin-bottom: 15px;
+}
+
+
+/* ---------- NOTICES ---------- */
+
+.notices {
+    background: #f5f7fa;
+}
+
+.notice-list {
+    max-width: 900px;
+    margin: auto;
+}
+
+.notice {
+    background: white;
+    margin-bottom: 15px;
+    padding: 20px;
+    border-left: 5px solid #123b6d;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.notice h3 {
+    color: #123b6d;
+    margin-bottom: 5px;
+}
+
+
+/* ---------- GALLERY ---------- */
+
+.gallery {
+    background: white;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+}
+
+
+/* ---------- IMPORTANT LINKS ---------- */
+
+.links {
+    background: #f5f7fa;
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.link-card {
+    background: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+}
+
+.link-card a {
+    color: #123b6d;
+    font-weight: bold;
+}
+
+
+/* ---------- CONTACT ---------- */
+
+.contact {
+    background: white;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.contact-card {
+    text-align: center;
+    padding: 30px;
+    background: #f5f7fa;
+    border-radius: 10px;
+}
+
+.contact-card i {
+    font-size: 30px;
+    color: #123b6d;
+    margin-bottom: 10px;
+}
+
+.contact-card h3 {
+    color: #123b6d;
+    margin-bottom: 8px;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+    background: #123b6d;
+    color: white;
+    text-align: center;
+    padding: 35px 0;
+}
+
+.footer p {
+    margin-bottom: 8px;
+}
+
+.footer a {
+    color: white;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* ---------- MOBILE MENU ---------- */
+
+.menu-toggle {
+    display: none;
+}
+
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 900px) {
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .links-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .teacher-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .achievement-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .top-content {
+        flex-direction: column;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .school-brand {
+        flex-direction: column;
+    }
+
+    .school-brand h1 {
+        font-size: 24px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+    }
+
+    .nav-menu a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero {
+        min-height: 400px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    section {
+        padding: 45px 0;
+    }
+
+    .section-title h2 {
+        font-size: 26px;
+    }
+
+    .cards,
+    .teacher-grid,
+    .achievement-grid,
+    .gallery-grid,
+    .links-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid img {
+        height: 200px;
+    }
+}
+/* =========================================================
+   TEACHERS & STAFF SECTION
+   ========================================================= */
+
+.teachers-section {
+    padding: 80px 0;
+    background: #f7f9fc;
+}
+
+
+/* Teachers Grid */
+
+.teachers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 45px;
+}
+
+
+/* Teacher Card */
+
+.teacher-card {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+
+/* Card Hover */
+
+.teacher-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Teacher Photo */
+
+.teacher-photo {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    background: #e9eef5;
+}
+
+
+.teacher-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+
+/* Photo Zoom */
+
+.teacher-card:hover .teacher-photo img {
+    transform: scale(1.05);
+}
+
+
+/* Teacher Information */
+
+.teacher-info {
+    padding: 25px;
+    text-align: center;
+}
+
+
+.teacher-info h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+
+.teacher-designation {
+    margin-bottom: 18px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+
+.teacher-info p {
+    margin: 8px 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* Subject and Qualification */
+
+.teacher-info strong {
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .teachers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .teachers-section {
+        padding: 60px 15px;
+    }
+
+
+    .teachers-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+
+    .teacher-photo {
+        height: 350px;
+    }
+
+
+    .teacher-info {
+        padding: 22px;
+    }
+
+
+    .teacher-info h3 {
+        font-size: 20px;
+    }
+
+}
+/* =========================================================
+   ACTIVITIES SECTION
+   ========================================================= */
+
+.activities-section {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+
+/* Activities Grid */
+
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 45px;
+}
+
+
+/* Activity Card */
+
+.activity-card {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+
+.activity-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Activity Image */
+
+.activity-image {
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+    background: #e9eef5;
+}
+
+
+.activity-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+
+.activity-card:hover .activity-image img {
+    transform: scale(1.06);
+}
+
+
+/* Activity Content */
+
+.activity-content {
+    position: relative;
+    padding: 55px 25px 25px;
+    text-align: center;
+}
+
+
+/* Activity Icon */
+
+.activity-icon {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+
+    font-size: 23px;
+}
+
+
+.activity-content h3 {
+    margin-bottom: 12px;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+
+.activity-content p {
+    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* View Photos Link */
+
+.activity-content a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+
+.activity-content a:hover {
+    gap: 13px;
+}
+
+
+/* =========================================================
+   EVENTS SECTION
+   ========================================================= */
+
+.events-section {
+    padding: 80px 0;
+    background: #f7f9fc;
+}
+
+
+/* Events Grid */
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 45px;
+}
+
+
+/* Event Card */
+
+.event-card {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition: all 0.3s ease;
+}
+
+
+.event-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Event Image */
+
+.event-image {
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+    background: #e9eef5;
+}
+
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+
+.event-card:hover .event-image img {
+    transform: scale(1.06);
+}
+
+
+/* Event Content */
+
+.event-content {
+    padding: 25px;
+}
+
+
+.event-content h3 {
+    margin: 10px 0;
+
+    font-size: 21px;
+    font-weight: 600;
+}
+
+
+.event-content p {
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+
+/* Event Date */
+
+.event-date {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* Event View Gallery */
+
+.event-content a {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+
+.event-content a:hover {
+    gap: 13px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .activity-grid,
+    .event-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .activities-section,
+    .events-section {
+        padding: 60px 15px;
+    }
+
+
+    .activity-grid,
+    .event-grid {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    .activity-image,
+    .event-image {
+        height: 240px;
+    }
+
+
+    .activity-content,
+    .event-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}
