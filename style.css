@@ -1054,3 +1054,9 @@ section {
     }
 
 }
+.school-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    display: block;
+}

@@ -144,3 +144,116 @@
     }
 
 }
+const schoolGallery = {
+
+    independence: {
+        folder: "images/gallery/independence-day/",
+        photos: [
+            "2026-photo1.jpg",
+            "2026-photo2.jpg",
+            "2025-photo1.jpg"
+        ],
+        yearsContainer: "independence-years",
+        galleryContainer: "independence-gallery"
+    },
+
+    activities: {
+        folder: "images/gallery/school-activities/",
+        photos: [
+            "2026-photo1.jpg",
+            "2026-photo2.jpg",
+            "2026-photo3.jpg",
+            "2025-photo1.jpg",
+            "2025-photo2.jpg"
+        ],
+        yearsContainer: "activities-years",
+        galleryContainer: "activities-gallery"
+    }
+
+};
+
+
+function createSchoolGallery(gallery) {
+
+    const yearsContainer =
+        document.getElementById(gallery.yearsContainer);
+
+    const galleryContainer =
+        document.getElementById(gallery.galleryContainer);
+
+    if (!yearsContainer || !galleryContainer) {
+        return;
+    }
+
+    const years = [...new Set(
+        gallery.photos.map(photo => photo.substring(0, 4))
+    )].sort((a, b) => b - a);
+
+    years.forEach((year, index) => {
+
+        const button = document.createElement("button");
+
+        button.className = "year-button";
+        button.textContent = year;
+
+        button.addEventListener("click", () => {
+
+            document
+                .querySelectorAll(
+                    "#" + gallery.yearsContainer + " .year-button"
+                )
+                .forEach(btn => btn.classList.remove("active"));
+
+            button.classList.add("active");
+
+            showYearPhotos(gallery, year);
+        });
+
+        yearsContainer.appendChild(button);
+
+        if (index === 0) {
+            button.classList.add("active");
+            showYearPhotos(gallery, year);
+        }
+
+    });
+
+}
+
+
+function showYearPhotos(gallery, year) {
+
+    const galleryContainer =
+        document.getElementById(gallery.galleryContainer);
+
+    galleryContainer.innerHTML = "";
+
+    const selectedPhotos =
+        gallery.photos.filter(photo =>
+            photo.substring(0, 4) === year
+        );
+
+    selectedPhotos.forEach(photo => {
+
+        const item = document.createElement("div");
+
+        item.className = "gallery-item";
+
+        item.innerHTML = `
+            <img
+                src="${gallery.folder}${photo}"
+                alt="School event photo ${year}"
+                loading="lazy"
+            >
+        `;
+
+        galleryContainer.appendChild(item);
+
+    });
+
+}
+
+
+Object.values(schoolGallery).forEach(gallery => {
+    createSchoolGallery(gallery);
+});
