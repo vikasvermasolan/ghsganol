@@ -1,219 +1,177 @@
-/* =========================================================
-   TEACHERS & STAFF SECTION
-   ========================================================= */
-
-.teachers-section {
-    padding: 80px 0;
-    background: #f7f9fc;
-}
-
-
-/* Teachers Grid */
-
-.teachers-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 45px;
-}
-
-
-/* Teacher Card */
-
-.teacher-card {
-    background: #ffffff;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-}
-
-
-/* Card Hover */
-
-.teacher-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-}
-
-
-/* Teacher Photo */
-
-.teacher-photo {
-    width: 100%;
-    height: 320px;
-    overflow: hidden;
-    background: #e9eef5;
-}
-
-
-.teacher-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-
-/* Photo Zoom */
-
-.teacher-card:hover .teacher-photo img {
-    transform: scale(1.05);
-}
-
-
-/* Teacher Information */
-
-.teacher-info {
-    padding: 25px;
-    text-align: center;
-}
-
-
-.teacher-info h3 {
-    margin: 0 0 8px;
-    font-size: 22px;
-    font-weight: 600;
-}
-
-
-.teacher-designation {
-    margin-bottom: 18px;
-    font-weight: 600;
-    font-size: 15px;
-}
-
-
-.teacher-info p {
-    margin: 8px 0;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-
-/* Subject and Qualification */
-
-.teacher-info strong {
-    font-weight: 600;
-}
-
 
 /* =========================================================
-   TABLET
+   SCHOOL PHOTO GALLERY
    ========================================================= */
 
-@media (max-width: 992px) {
-
-    .teachers-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    .teachers-section {
-        padding: 60px 15px;
-    }
-
-
-    .teachers-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-
-    .teacher-photo {
-        height: 350px;
-    }
-
-
-    .teacher-info {
-        padding: 22px;
-    }
-
-
-    .teacher-info h3 {
-        font-size: 20px;
-    }
-
-}
 const schoolGallery = {
 
     independence: {
+        title: "🇮🇳 Independence Day",
+        description: "Celebrating the spirit of freedom and patriotism",
         folder: "images/gallery/independence-day/",
-        photos: [
-            "2026-photo1.jpg",
-            "2026-photo2.jpg",
-            "2025-photo1.jpg"
-        ],
-        yearsContainer: "independence-years",
-        galleryContainer: "independence-gallery"
+        photos: {
+            "2026": [
+                "photo1.jpg",
+                "photo2.jpg",
+                "photo3.jpg"
+            ]
+        }
+    },
+
+    teachersDay: {
+        title: "👨‍🏫 Teachers' Day",
+        description: "Honouring our teachers and celebrating their contribution",
+        folder: "images/gallery/teachers-day/",
+        photos: {
+            "2026": [
+                "photo1.jpg",
+                "photo2.jpg",
+                "photo3.jpg"
+            ]
+        }
+    },
+
+    republicDay: {
+        title: "🇮🇳 Republic Day",
+        description: "Celebrating the spirit of our Constitution and nation",
+        folder: "images/gallery/republic-day/",
+        photos: {
+            "2026": [
+                "photo1.jpg",
+                "photo2.jpg",
+                "photo3.jpg"
+            ]
+        }
+    },
+
+    annualFunction: {
+        title: "🎭 Annual Function",
+        description: "Celebrating the talent and achievements of our students",
+        folder: "images/gallery/annual-function/",
+        photos: {
+            "2026": [
+                "photo1.jpg",
+                "photo2.jpg",
+                "photo3.jpg"
+            ]
+        }
+    },
+
+    sportsDay: {
+        title: "🏆 Sports Day",
+        description: "Celebrating sportsmanship, teamwork and achievement",
+        folder: "images/gallery/sports-day/",
+        photos: {
+            "2026": [
+                "photo1.jpg",
+                "photo2.jpg",
+                "photo3.jpg"
+            ]
+        }
+    },
+
+    childrensDay: {
+        title: "🧒 Children's Day",
+        description: "Celebrating the joy, creativity and innocence of childhood",
+        folder: "images/gallery/childrens-day/",
+        photos: {
+            "2026": [
+                "photo1.jpg",
+                "photo2.jpg",
+                "photo3.jpg"
+            ]
+        }
     },
 
     activities: {
+        title: "🌱 School Activities",
+        description: "Learning, creativity and experiences beyond the classroom",
         folder: "images/gallery/school-activities/",
-        photos: [
-            "2026-photo1.jpg",
-            "2026-photo2.jpg",
-            "2026-photo3.jpg",
-            "2025-photo1.jpg",
-            "2025-photo2.jpg"
-        ],
-        yearsContainer: "activities-years",
-        galleryContainer: "activities-gallery"
+        photos: {
+            "2026": [
+                "photo1.jpg",
+                "photo2.jpg",
+                "photo3.jpg"
+            ]
+        }
     }
 
 };
 
 
-function createSchoolGallery(gallery) {
+/* =========================================================
+   START GALLERY WHEN PAGE LOADS
+   ========================================================= */
 
-    const yearsContainer =
-        document.getElementById(gallery.yearsContainer);
+document.addEventListener("DOMContentLoaded", function () {
 
-    const galleryContainer =
-        document.getElementById(gallery.galleryContainer);
+    createCelebrationButtons();
 
-    if (!yearsContainer || !galleryContainer) {
+    createActivitiesGallery();
+
+});
+
+
+/* =========================================================
+   CELEBRATION BUTTONS
+   ========================================================= */
+
+function createCelebrationButtons() {
+
+    const container =
+        document.getElementById("celebration-events");
+
+    if (!container) {
+        console.error("celebration-events not found");
         return;
     }
 
-    const years = [...new Set(
-        gallery.photos.map(photo => photo.substring(0, 4))
-    )].sort((a, b) => b - a);
+    container.innerHTML = "";
 
-    years.forEach((year, index) => {
+    const celebrations = [
+        "independence",
+        "teachersDay",
+        "republicDay",
+        "annualFunction",
+        "sportsDay",
+        "childrensDay"
+    ];
+
+    celebrations.forEach((eventKey, index) => {
+
+        const event = schoolGallery[eventKey];
 
         const button = document.createElement("button");
 
-        button.className = "year-button";
-        button.textContent = year;
+        button.type = "button";
+        button.className = "celebration-btn";
+        button.textContent = event.title;
 
-        button.addEventListener("click", () => {
+        button.addEventListener("click", function () {
 
             document
-                .querySelectorAll(
-                    "#" + gallery.yearsContainer + " .year-button"
-                )
-                .forEach(btn => btn.classList.remove("active"));
+                .querySelectorAll(".celebration-btn")
+                .forEach(btn => {
+                    btn.classList.remove("active");
+                });
 
             button.classList.add("active");
 
-            showYearPhotos(gallery, year);
+            showCelebration(eventKey);
+
         });
 
-        yearsContainer.appendChild(button);
+        container.appendChild(button);
+
+
+        /* Open first celebration automatically */
 
         if (index === 0) {
+
             button.classList.add("active");
-            showYearPhotos(gallery, year);
+
+            showCelebration(eventKey);
+
         }
 
     });
@@ -221,31 +179,186 @@ function createSchoolGallery(gallery) {
 }
 
 
-function showYearPhotos(gallery, year) {
+/* =========================================================
+   SHOW CELEBRATION YEARS
+   ========================================================= */
+
+function showCelebration(eventKey) {
+
+    const event = schoolGallery[eventKey];
+
+    const yearsContainer =
+        document.getElementById("celebration-years");
 
     const galleryContainer =
-        document.getElementById(gallery.galleryContainer);
+        document.getElementById("celebration-gallery");
+
+    if (!yearsContainer || !galleryContainer) {
+        console.error("Celebration containers not found");
+        return;
+    }
+
+    yearsContainer.innerHTML = "";
 
     galleryContainer.innerHTML = "";
 
-    const selectedPhotos =
-        gallery.photos.filter(photo =>
-            photo.substring(0, 4) === year
-        );
 
-    selectedPhotos.forEach(photo => {
+    /* Get available years */
 
-        const item = document.createElement("div");
+    const years =
+        Object.keys(event.photos)
+        .sort((a, b) => b - a);
+
+
+    years.forEach((year, index) => {
+
+        const button = document.createElement("button");
+
+        button.type = "button";
+        button.className = "year-button";
+        button.textContent = year;
+
+        button.addEventListener("click", function () {
+
+            document
+                .querySelectorAll(
+                    "#celebration-years .year-button"
+                )
+                .forEach(btn => {
+                    btn.classList.remove("active");
+                });
+
+            button.classList.add("active");
+
+            showYearPhotos(
+                event,
+                year,
+                "celebration-gallery"
+            );
+
+        });
+
+        yearsContainer.appendChild(button);
+
+
+        /* Show latest year automatically */
+
+        if (index === 0) {
+
+            button.classList.add("active");
+
+            showYearPhotos(
+                event,
+                year,
+                "celebration-gallery"
+            );
+
+        }
+
+    });
+
+}
+
+
+/* =========================================================
+   SHOW PHOTOS
+   ========================================================= */
+
+function showYearPhotos(
+    event,
+    year,
+    containerId
+) {
+
+    const galleryContainer =
+        document.getElementById(containerId);
+
+    if (!galleryContainer) {
+        return;
+    }
+
+    galleryContainer.innerHTML = "";
+
+    const photos = event.photos[year];
+
+
+    if (!photos || photos.length === 0) {
+
+        galleryContainer.innerHTML =
+            `<p class="no-photos">
+                No photos available for ${year}.
+            </p>`;
+
+        return;
+    }
+
+
+    photos.forEach(photo => {
+
+        const item =
+            document.createElement("div");
 
         item.className = "gallery-item";
 
-        item.innerHTML = `
-            <img
-                src="${gallery.folder}${photo}"
-                alt="School event photo ${year}"
-                loading="lazy"
-            >
-        `;
+
+        const image =
+            document.createElement("img");
+
+        /*
+         * IMPORTANT:
+         * Photos are stored inside:
+         *
+         * event-folder / year / photo
+         */
+
+        image.src =
+            event.folder +
+            year +
+            "/" +
+            photo;
+
+        image.alt =
+            event.title +
+            " - " +
+            year;
+
+        image.loading = "lazy";
+
+
+        /* If image does not exist */
+
+        image.onerror = function () {
+
+            console.error(
+                "Image not found:",
+                image.src
+            );
+
+            item.innerHTML = `
+                <div class="image-error">
+                    Photo not found
+                </div>
+            `;
+
+        };
+
+
+        /* Click image */
+
+        image.addEventListener(
+            "click",
+            function () {
+
+                openGalleryImage(
+                    image.src,
+                    image.alt
+                );
+
+            }
+        );
+
+
+        item.appendChild(image);
 
         galleryContainer.appendChild(item);
 
@@ -254,6 +367,172 @@ function showYearPhotos(gallery, year) {
 }
 
 
-Object.values(schoolGallery).forEach(gallery => {
-    createSchoolGallery(gallery);
-});
+/* =========================================================
+   SCHOOL ACTIVITIES
+   ========================================================= */
+
+function createActivitiesGallery() {
+
+    const event =
+        schoolGallery.activities;
+
+    const yearsContainer =
+        document.getElementById("activities-years");
+
+    if (!yearsContainer) {
+        console.error("activities-years not found");
+        return;
+    }
+
+    yearsContainer.innerHTML = "";
+
+    const years =
+        Object.keys(event.photos)
+        .sort((a, b) => b - a);
+
+
+    years.forEach((year, index) => {
+
+        const button =
+            document.createElement("button");
+
+        button.type = "button";
+        button.className = "year-button";
+        button.textContent = year;
+
+
+        button.addEventListener("click", function () {
+
+            document
+                .querySelectorAll(
+                    "#activities-years .year-button"
+                )
+                .forEach(btn => {
+                    btn.classList.remove("active");
+                });
+
+            button.classList.add("active");
+
+            showYearPhotos(
+                event,
+                year,
+                "activities-gallery"
+            );
+
+        });
+
+
+        yearsContainer.appendChild(button);
+
+
+        /* Latest year automatically */
+
+        if (index === 0) {
+
+            button.classList.add("active");
+
+            showYearPhotos(
+                event,
+                year,
+                "activities-gallery"
+            );
+
+        }
+
+    });
+
+}
+
+
+/* =========================================================
+   IMAGE LIGHTBOX
+   ========================================================= */
+
+function openGalleryImage(src, alt) {
+
+    let lightbox =
+        document.getElementById(
+            "gallery-lightbox"
+        );
+
+
+    /* Create lightbox only once */
+
+    if (!lightbox) {
+
+        lightbox =
+            document.createElement("div");
+
+        lightbox.id =
+            "gallery-lightbox";
+
+
+        lightbox.innerHTML = `
+
+            <div class="lightbox-content">
+
+                <button
+                    type="button"
+                    class="lightbox-close">
+                    &times;
+                </button>
+
+                <img
+                    src=""
+                    alt="">
+                    
+            </div>
+
+        `;
+
+
+        document.body.appendChild(lightbox);
+
+
+        /* Close button */
+
+        lightbox
+            .querySelector(".lightbox-close")
+            .addEventListener(
+                "click",
+                function () {
+
+                    lightbox.style.display =
+                        "none";
+
+                }
+            );
+
+
+        /* Close by clicking outside image */
+
+        lightbox.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target === lightbox
+                ) {
+
+                    lightbox.style.display =
+                        "none";
+
+                }
+
+            }
+        );
+
+    }
+
+
+    const image =
+        lightbox.querySelector("img");
+
+    image.src = src;
+
+    image.alt = alt;
+
+
+    lightbox.style.display = "flex";
+
+}

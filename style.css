@@ -1060,3 +1060,478 @@ section {
     object-fit: contain;
     display: block;
 }
+/* =========================================================
+   SCHOOL PHOTO GALLERY
+   ========================================================= */
+
+.gallery-section {
+    padding: 80px 0;
+    background: #f7f9fc;
+}
+
+
+/* ---------- Gallery Event Box ---------- */
+
+.gallery-event {
+    background: #ffffff;
+    padding: 35px;
+    margin-bottom: 45px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ---------- Event Title ---------- */
+
+.event-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.event-title h3 {
+    color: #123b6d;
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.event-title p {
+    color: #666;
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   CELEBRATION BUTTONS
+   ========================================================= */
+
+.celebration-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+
+.celebration-btn {
+    border: 2px solid #123b6d;
+    background: #ffffff;
+    color: #123b6d;
+
+    padding: 11px 20px;
+
+    border-radius: 25px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+.celebration-btn:hover {
+    background: #123b6d;
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+.celebration-btn.active {
+    background: #123b6d;
+    color: #ffffff;
+
+    box-shadow: 0 5px 15px rgba(18, 59, 109, 0.25);
+}
+
+
+/* =========================================================
+   YEAR BUTTONS
+   ========================================================= */
+
+.year-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 30px;
+}
+
+
+.year-button {
+    border: none;
+
+    background: #e9eef5;
+    color: #123b6d;
+
+    padding: 9px 18px;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+.year-button:hover {
+    background: #123b6d;
+    color: #ffffff;
+}
+
+
+.year-button.active {
+    background: #f5b400;
+    color: #111111;
+
+    box-shadow: 0 4px 12px rgba(245, 180, 0, 0.25);
+}
+
+
+/* =========================================================
+   PHOTO GRID
+   ========================================================= */
+
+.event-gallery {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-top: 10px;
+}
+
+
+/* ---------- Individual Gallery Item ---------- */
+
+.gallery-item {
+    position: relative;
+
+    overflow: hidden;
+
+    height: 220px;
+
+    border-radius: 10px;
+
+    background: #e9eef5;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.10);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.16);
+}
+
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+
+.gallery-item:hover img {
+    transform: scale(1.07);
+}
+
+
+/* =========================================================
+   IMAGE ERROR
+   ========================================================= */
+
+.image-error {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 14px;
+
+    padding: 20px;
+}
+
+
+/* =========================================================
+   NO PHOTOS MESSAGE
+   ========================================================= */
+
+.no-photos {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 30px;
+
+    color: #777;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+
+#gallery-lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background: rgba(0, 0, 0, 0.90);
+}
+
+
+.lightbox-content {
+    position: relative;
+
+    max-width: 95vw;
+    max-height: 90vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.lightbox-content img {
+    max-width: 90vw;
+    max-height: 85vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.40);
+}
+
+
+/* ---------- Close Button ---------- */
+
+.lightbox-close {
+    position: absolute;
+
+    top: -45px;
+    right: -5px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #123b6d;
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.3s ease;
+}
+
+
+.lightbox-close:hover {
+    transform: rotate(90deg);
+
+    background: #f5b400;
+
+    color: #111111;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .event-gallery {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .gallery-section {
+        padding: 60px 0;
+    }
+
+    .gallery-event {
+        padding: 25px 20px;
+    }
+
+    .event-gallery {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 15px;
+    }
+
+    .gallery-item {
+        height: 210px;
+    }
+
+    .event-title h3 {
+        font-size: 23px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .gallery-section {
+        padding: 50px 0;
+    }
+
+    .gallery-event {
+        padding: 22px 15px;
+
+        margin-bottom: 30px;
+
+        border-radius: 12px;
+    }
+
+    .event-title {
+        margin-bottom: 25px;
+    }
+
+    .event-title h3 {
+        font-size: 21px;
+    }
+
+    .event-title p {
+        font-size: 13px;
+    }
+
+
+    /* Celebration Buttons */
+
+    .celebration-buttons {
+        gap: 8px;
+    }
+
+    .celebration-btn {
+        padding: 9px 13px;
+
+        font-size: 13px;
+
+        border-radius: 20px;
+    }
+
+
+    /* Year Buttons */
+
+    .year-buttons {
+        gap: 7px;
+
+        margin-bottom: 22px;
+    }
+
+    .year-button {
+        padding: 8px 14px;
+
+        font-size: 13px;
+    }
+
+
+    /* Photos */
+
+    .event-gallery {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+    }
+
+    .gallery-item {
+        height: 170px;
+
+        border-radius: 8px;
+    }
+
+
+    /* Lightbox */
+
+    #gallery-lightbox {
+        padding: 15px;
+    }
+
+    .lightbox-content img {
+        max-width: 94vw;
+        max-height: 80vh;
+    }
+
+    .lightbox-close {
+        top: -45px;
+        right: 0;
+    }
+
+}
